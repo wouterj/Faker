@@ -15,7 +15,7 @@ class Address extends \Faker\Provider\Address
     protected static $cityFormats = array('{{cityName}}');
 
     protected static $addressFormats = array(
-      	  '{{streetAddress}}\n {{postcode}} {{city}}',
+      	'{{streetAddress}}\n {{postcode}} {{city}}',
   	);
 
     protected static $streetSuffix = array(
@@ -369,7 +369,7 @@ class Address extends \Faker\Provider\Address
      */
   	public static function buildingNumber()
   	{
-  		  return static::bothify(static::randomElement(static::$buildingNumber));
+  		return static::bothify(static::randomElement(static::$buildingNumber));
   	}
 
     /**
@@ -385,7 +385,7 @@ class Address extends \Faker\Provider\Address
      */
     public function address()
   	{
-  		  $address = parent::address();
+  		$address = parent::address();
         return preg_replace('/\\\n/', PHP_EOL, $address);
   	}
 
@@ -396,7 +396,7 @@ class Address extends \Faker\Provider\Address
      */
     public static function latitude()
   	{
-  		  return number_format(mt_rand(50750000, 53550000)/1000000, 6);
+  		return number_format(mt_rand(50750000, 53550000)/1000000, 6);
   	}
 
     /**
@@ -406,6 +406,6 @@ class Address extends \Faker\Provider\Address
      */
     public static function longitude()
   	{
-  		  return number_format(mt_rand(3380000, 7220000)/1000000, 6);
+  		return number_format(mt_rand(3380000, 7220000)/1000000, 6);
   	}
 }
